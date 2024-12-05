@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Testmdk1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SprTable">
+    <Key>
+      <PropertyRef Name="Cod_Pred" />
+    </Key>
+    <Property Name="Cod_Pred" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Pred" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UchTable">
+    <Key>
+      <PropertyRef Name="Num_z" />
+    </Key>
+    <Property Name="Num_z" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cod_Pred" Type="int" Nullable="false" />
+    <Property Name="Name_Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kol_vo" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UchTable_SprTable">
+    <End Role="SprTable" Type="Self.SprTable" Multiplicity="1" />
+    <End Role="UchTable" Type="Self.UchTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SprTable">
+        <PropertyRef Name="Cod_Pred" />
+      </Principal>
+      <Dependent Role="UchTable">
+        <PropertyRef Name="Cod_Pred" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Testmdk1ModelContainer">
+    <EntitySet Name="SprTable" EntityType="Self.SprTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UchTable" EntityType="Self.UchTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UchTable_SprTable" Association="Self.FK_UchTable_SprTable">
+      <End Role="SprTable" EntitySet="SprTable" />
+      <End Role="UchTable" EntitySet="UchTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

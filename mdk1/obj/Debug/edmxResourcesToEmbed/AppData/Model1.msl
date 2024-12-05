@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Testmdk1ModelContainer" CdmEntityContainer="Testmdk1Entities">
+    <EntitySetMapping Name="SprTable">
+      <EntityTypeMapping TypeName="Testmdk1Model.SprTable">
+        <MappingFragment StoreEntitySet="SprTable">
+          <ScalarProperty Name="Cod_Pred" ColumnName="Cod_Pred" />
+          <ScalarProperty Name="Name_Pred" ColumnName="Name_Pred" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UchTable">
+      <EntityTypeMapping TypeName="Testmdk1Model.UchTable">
+        <MappingFragment StoreEntitySet="UchTable">
+          <ScalarProperty Name="Num_z" ColumnName="Num_z" />
+          <ScalarProperty Name="Cod_Pred" ColumnName="Cod_Pred" />
+          <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+          <ScalarProperty Name="Kol_vo" ColumnName="Kol_vo" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

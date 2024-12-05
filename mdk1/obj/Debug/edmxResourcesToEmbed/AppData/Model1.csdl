@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Testmdk1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SprTable">
+    <Key>
+      <PropertyRef Name="Cod_Pred" />
+    </Key>
+    <Property Name="Cod_Pred" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Pred" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UchTable" Relationship="Self.FK_UchTable_SprTable" FromRole="SprTable" ToRole="UchTable" />
+  </EntityType>
+  <EntityType Name="UchTable">
+    <Key>
+      <PropertyRef Name="Num_z" />
+    </Key>
+    <Property Name="Num_z" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cod_Pred" Type="Int32" Nullable="false" />
+    <Property Name="Name_Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Kol_vo" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SprTable" Relationship="Self.FK_UchTable_SprTable" FromRole="UchTable" ToRole="SprTable" />
+  </EntityType>
+  <Association Name="FK_UchTable_SprTable">
+    <End Role="SprTable" Type="Self.SprTable" Multiplicity="1" />
+    <End Role="UchTable" Type="Self.UchTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SprTable">
+        <PropertyRef Name="Cod_Pred" />
+      </Principal>
+      <Dependent Role="UchTable">
+        <PropertyRef Name="Cod_Pred" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Testmdk1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SprTable" EntityType="Self.SprTable" />
+    <EntitySet Name="UchTable" EntityType="Self.UchTable" />
+    <AssociationSet Name="FK_UchTable_SprTable" Association="Self.FK_UchTable_SprTable">
+      <End Role="SprTable" EntitySet="SprTable" />
+      <End Role="UchTable" EntitySet="UchTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

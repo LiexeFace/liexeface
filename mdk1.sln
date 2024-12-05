@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mdk1", "mdk1\mdk1.csproj", "{68CE7EF1-4B9E-4AD4-8AA0-8A72F5B37FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mdk1Tests", "mdk1Tests\mdk1Tests.csproj", "{032347C0-90DC-493B-B1C9-3CED6A424CB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68CE7EF1-4B9E-4AD4-8AA0-8A72F5B37FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68CE7EF1-4B9E-4AD4-8AA0-8A72F5B37FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68CE7EF1-4B9E-4AD4-8AA0-8A72F5B37FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68CE7EF1-4B9E-4AD4-8AA0-8A72F5B37FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032347C0-90DC-493B-B1C9-3CED6A424CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032347C0-90DC-493B-B1C9-3CED6A424CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032347C0-90DC-493B-B1C9-3CED6A424CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032347C0-90DC-493B-B1C9-3CED6A424CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {417713B2-ADDE-466D-9131-D3AD5D4E109E}
+	EndGlobalSection
+EndGlobal
